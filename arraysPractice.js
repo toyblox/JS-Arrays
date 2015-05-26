@@ -6,6 +6,12 @@ var arr = [10,20,30];
 
   //Code Here
 
+  var first = function(x) {
+    return x[0];
+  };
+
+  var newFirst = first(arr);
+
 
 //Next problem
 
@@ -17,6 +23,11 @@ var arr = [40,50,60];
 
   //Code Here
 
+var last = function(x) {
+  return x[x.length-1];
+};
+
+var newLast = last(arr);
 
 //Next Problem
 
@@ -25,6 +36,14 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
   //Code Here
+
+  var looper = function(x) {
+    for(var i = 0; i < x.length; i++) {
+      alert(x[i]);
+    }
+  };
+
+  var myFamily = looper(family);
 
 
 //Next problem
@@ -36,6 +55,13 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 
   //Code Here
 
+var reversedLooper = function(x) {
+  for(var i = x.length-1; i >= 0; i--) {
+    alert(x[i]);
+  }
+};
+
+var newLoop = reversedLooper(letters);
 
 //Next Problem
 
@@ -44,6 +70,15 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 //Write a function named evenFinder that is given nums as it's only argument and removes all values that aren't even from the given array.
 
   //Code Here
+
+  var evenFinder = function(x) {
+    for(var i = 0; i >= 0; i++) {
+      if(x[i] % 2 !== 0) {
+        x.splice (i--, 1);
+      }
+      alert(x[i]);
+    }
+  };
 
 
 //Next problem
@@ -59,6 +94,21 @@ var odds = [];
 
   //Code Here
 
+  var divider = function(x, y, z) {
+    for(var i = 0; i < x.length; i++) {
+      if(x[i] % 2 === 0) {
+        y.push(x[i]);
+      }
+      else {
+        z.push(x[i)];
+      }
+    }
+  };
+
+  divider(nums, evens, odds);
+  console.log(evens);
+  console.log(odds);
+
 
 //Next Problem
 
@@ -71,6 +121,28 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 
   //Code Here
 
+  var finder = function(x, y) {
+    for(var i = 0; i < x.length; i++) {
+      if(x[i] === random) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  OR
+
+  var finder = function(x, y) {
+    if(y.indexOf(x) === -1){
+      return false;
+    }
+    else {
+      return true;
+    }
+  };
+
+
+
 
 //Next problem
 
@@ -80,6 +152,12 @@ var str = 'this is my sentence';
 //Write a function called reverse that takes is given str as it's only argument and returns that string after it's been reversed
 
   //Code Here
+
+var reverse = function(x) {
+  return x = x.split('').reverse().join('');
+};
+
+reverse(str);
 
 
 //Next Problem
@@ -101,8 +179,21 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
   //Code Here
 
+  var removeItem = function(x, y) {
+    for(var i = 0; i < y.length; i++) {
+      if(y[i] === x) {
+        y.splice(i, 1);
+        i--;
+      }
+    }
+  };
+
 //removeItem('chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem('Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
+
+var addItem = function(x, y) {
+  y.push(x);
+};
 
 
 
@@ -113,7 +204,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
   //Code Here
-
+var maker = function(x) {
+  var x = [];
+  for(var i = 0; i <= 215; i++) {
+    x.push(i);
+  }
+  return x;
+};
 
 
 //Next Problem
@@ -124,6 +221,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
+
+  var addTen = function(x) {
+    var newArr = [];
+    for(var i = 0; i < x.length; i++) {
+      newArr.push(x[i] + 10);
+    }
+    return newArr;
+  };
 
 
 
@@ -146,6 +251,15 @@ for(var i = 0; i < num2; i++){
 
   //Code Here
 
+  var longArr = function(x, y) {
+    if(x.length > y.length) {
+      return x;
+    }
+    else {
+      return y;
+    }
+  };
+
 
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example)
@@ -153,6 +267,22 @@ for(var i = 0; i < num2; i++){
 */
 
   //Code Here
+
+  var both = function(x, y) {
+    var combo = {};
+    var arr = [];
+    for(var i = 0; i < x.length; i++) {
+      if(!combo[x[i]]) {
+        combo[x[i]] = true;
+      }
+    }
+    for(var i = 0; i < y.length; i++) {
+      if(combo[y[i]]) {
+        arr.push(y[i]);
+      }
+    }
+    return arr;
+  };
   
   
   
@@ -194,10 +324,25 @@ sure that it's equal to 4. */
 
   //Code Here
 
+  devMountainEmployees.push(tyler);
+  devMountainEmployees.push(cahlan);
+  devMountainEmployees.push(ryan);
+  devMountainEmployees.push(colt);
+  console.log(devMountainEmployees.length);
+
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absense to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
+
+
+for(var i = 0; i < devMountainEmployees.length; i++) {
+  if(devMountainEmployees[i] === 'cahlan') {
+    devMountainEmployees.splice(i, 1);
+  }
+}
+
+console.log(devMountainEmployees);
 
 
 
@@ -241,6 +386,8 @@ of Data is to have an Array full of objects. */
 
   //Code Here
 
+  var users = [];
+
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
 
@@ -253,6 +400,8 @@ var user1 = {
 }
 
 //Your Code Here
+
+
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
